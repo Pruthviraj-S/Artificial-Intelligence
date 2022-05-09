@@ -27,25 +27,39 @@ train_data['Age'] = train_data[['Age','Pclass']].apply(add_age,axis = 1)
 train_data.drop('Cabin',inplace = True,axis = 1)
 train_data.dropna(inplace = True)
 
-# embarked
-embarked = pd.get_dummies(train_data['Embarked'],drop_first=True)
-embarked = pd.get_dummies(train_data['Pclass'],drop_first=True)
-train_data.drop(['PassengerId','Pclass','Name','Sex','Ticket','Embarked'],axis=1,inplace=True)
+# # embarked
+# embarked = pd.get_dummies(train_data['Embarked'],drop_first=True)
+# embarked = pd.get_dummies(train_data['Pclass'],drop_first=True)
+# train_data.drop(['PassengerId','Pclass','Name','Sex','Ticket','Embarked'],axis=1,inplace=True)
 
-x = train_data.drop('Survived',axis=1)
-y = train_data['Survived']
+# x = train_data.drop('Survived',axis=1)
+# y = train_data['Survived']
 
-# split for test train
-x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.3,random_state=101)
+# # split for test train
+# x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.3,random_state=101)
 
-# logistic regression 
-logmodel = LogisticRegression()
-logmodel.fit(x_train,y_train)
-LogisticRegression()
+# # logistic regression 
+# logmodel = LogisticRegression()
+# logmodel.fit(x_train,y_train)
+# LogisticRegression()
 
-# prediction 
-predictions = logmodel.predict(x_test)
-print('\npredictions:\n',classification_report(y_test, predictions))
+# # prediction 
+# predictions = logmodel.predict(x_test)
+# print('\npredictions:\n',classification_report(y_test, predictions))
 
-# confusion matrix 
-print('\nConfusion matrix:\n',confusion_matrix(y_test, predictions))
+# # confusion matrix 
+# print('\nConfusion matrix:\n',confusion_matrix(y_test, predictions))
+
+# Find survived passengers when Pclass=1 & gender=M
+que1=train_data.loc[train_data['Survived']==1]
+que1=que1.loc[que1['Pclass']==1]
+que1=que1.loc[que1['Sex']=='male']
+print('\nNumber of survived passengers when  Pclass=1 & gender=M: ',que1['Survived'].count())
+
+que1_met2 = train_data[(train_data['Pclass']==1) & (train_data['Survived']==1) & (train_data['Sex']=='male')]
+print('\nNumber of survived passengers when  Pclass=1 & gender=M: ',que1_met2['Survived'].count())
+
+# Find survived passengers when age>40 & sibsp=0
+# count number of family travelling together
+# Find survived passengers when pclass=3,gender=F & age<12
+# improve confusion matrix by paramtere re-engineering
