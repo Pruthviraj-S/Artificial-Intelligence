@@ -51,11 +51,12 @@ train_data.dropna(inplace = True)
 # print('\nConfusion matrix:\n',confusion_matrix(y_test, predictions))
 
 # Find survived passengers when Pclass=1 & gender=M
+# method 1
 que1=train_data.loc[train_data['Survived']==1]
 que1=que1.loc[que1['Pclass']==1]
 que1=que1.loc[que1['Sex']=='male']
 print('\nNumber of survived passengers when  Pclass=1 & gender=M: ',que1['Survived'].count())
-
+# method 2
 que1_met2 = train_data[(train_data['Pclass']==1) & (train_data['Survived']==1) & (train_data['Sex']=='male')]
 print('\nNumber of survived passengers when  Pclass=1 & gender=M: ',que1_met2['Survived'].count())
 
