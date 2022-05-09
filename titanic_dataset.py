@@ -2,6 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sb
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 
 # datatset 
 train_data = pd.read_csv('./titanic dataset/train.csv')
@@ -19,6 +22,7 @@ def add_age(cols):
         return int(train_data[train_data['Pclass'] == Pclass]['Age'].mean())
     else:
         return Age
+
 train_data['Age'] = train_data[['Age','Pclass']].apply(add_age,axis = 1)
 train_data.drop('Cabin',inplace = True,axis = 1)
 train_data.dropna(inplace = True)
@@ -26,7 +30,22 @@ train_data.dropna(inplace = True)
 # embarked
 embarked = pd.get_dummies(train_data['Embarked'],drop_first=True)
 embarked = pd.get_dummies(train_data['Pclass'],drop_first=True)
-train_data.drop(['PassngerId','Pclass','Name','Sex','Ticket','Embarked'],axis=1,inplace=True)
+train_data.drop(['PassengerId','Pclass','Name','Sex','Ticket','Embarked'],axis=1,inplace=True)
 
-x = train_data.drop('survived',axis=1)
+x = train_data.drop('Survived',axis=1)
 y = train_data['Survived']
+
+# split for test train
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.3,random_state=101)
+
+# logistic regression 
+logmodel = LogisticRegression()
+logmodel.fit(x_train,y_train)
+LogisticRegression()
+
+# prediction 
+predictions = logmodel.predict(x_test)
+print('\npredictions:\n',classification_report(y_test, predictions))
+
+# confusion matrix 
+print('\nConfusion matrix:\n',confusion_matrix(y_test, predictions))
