@@ -72,4 +72,4 @@ print('\nNumber of family travelling together: ',que3['Survived'].count())
 que4 = train_data[(train_data['Pclass']==3) & (train_data['Survived']==1) & (train_data['Sex']=='female') & (train_data['Age']<12)]
 print('\nNumber of survived passengers when pclass = 3,gender = F & age < 12: ',que4['Survived'].count())
 
-# improve confusion matrix by paramtere re-engineering
+# improve confusion matrix by parameter re-engineering
