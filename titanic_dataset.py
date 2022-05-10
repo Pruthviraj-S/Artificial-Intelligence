@@ -52,15 +52,24 @@ train_data.dropna(inplace = True)
 
 # Find survived passengers when Pclass=1 & gender=M
 # method 1
-que1=train_data.loc[train_data['Survived']==1]
-que1=que1.loc[que1['Pclass']==1]
-que1=que1.loc[que1['Sex']=='male']
-print('\nNumber of survived passengers when  Pclass=1 & gender=M: ',que1['Survived'].count())
+# que1=train_data.loc[train_data['Survived']==1]
+# que1=que1.loc[que1['Pclass']==1]
+# que1=que1.loc[que1['Sex']=='male']
+# print('\nNumber of survived passengers when  Pclass=1 & gender=M: ',que1['Survived'].count())
 # method 2
 que1_met2 = train_data[(train_data['Pclass']==1) & (train_data['Survived']==1) & (train_data['Sex']=='male')]
-print('\nNumber of survived passengers when  Pclass=1 & gender=M: ',que1_met2['Survived'].count())
+print('\nNumber of survived passengers when  Pclass = 1 & gender = M: ',que1_met2['Survived'].count())
 
 # Find survived passengers when age>40 & sibsp=0
+que2 = train_data[(train_data['Age']>40) & (train_data['Survived']==1) & (train_data['SibSp']==0)]
+print('\nNumber of survived passengers when age > 40 & sibsp = 0: ',que2['Survived'].count())
+
 # count number of family travelling together
+que3 = train_data[(train_data['SibSp'])>0]
+print('\nNumber of family travelling together: ',que3['Survived'].count())
+
 # Find survived passengers when pclass=3,gender=F & age<12
+que4 = train_data[(train_data['Pclass']==3) & (train_data['Survived']==1) & (train_data['Sex']=='female') & (train_data['Age']<12)]
+print('\nNumber of survived passengers when pclass = 3,gender = F & age < 12: ',que4['Survived'].count())
+
 # improve confusion matrix by paramtere re-engineering
