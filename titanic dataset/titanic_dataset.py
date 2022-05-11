@@ -1,3 +1,4 @@
+from importlib.resources import read_text
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sb
@@ -7,7 +8,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
 # datatset 
-train_data = pd.read_csv('./train.csv')
+train_data = pd.read_csv('./titanic dataset/train.csv')
 print(train_data.head(5))
 print('\nCount:\n',train_data.count())
 
@@ -73,3 +74,4 @@ que4 = train_data[(train_data['Pclass']==3) & (train_data['Survived']==1) & (tra
 print('\nNumber of survived passengers when pclass = 3,gender = F & age < 12: ',que4['Survived'].count())
 
 # improve confusion matrix by parameter re-engineering
+# featureeng = read_text('./titanic_feature_re-eng.py') 
