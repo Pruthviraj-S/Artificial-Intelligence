@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
 # datatset 
-train_data = pd.read_csv('./titanic dataset/train.csv')
+train_data = pd.read_csv('./train.csv')
 print(train_data.head(5))
 print('\nCount:\n',train_data.count())
 

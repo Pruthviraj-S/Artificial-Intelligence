@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as mt
 
 # import dataset
-data = pd.read_csv('./data proc dataset/headbrain.csv')
+data = pd.read_csv('./headbrain.csv')
 
 # x=independent, y=dependent
 x = data['Head Size(cm^3)'].values

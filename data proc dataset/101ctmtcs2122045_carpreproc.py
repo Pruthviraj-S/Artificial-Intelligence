@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder
 #from sklearn.preprocessing import OneHotEncoder
 
 #import dataset
-data = pd.read_csv('./data proc dataset/car_ad.csv',encoding='iso-8859-9')
+data = pd.read_csv('./car_ad.csv',encoding='iso-8859-9')
 
 #dataclean
 print(data.isnull().sum())
