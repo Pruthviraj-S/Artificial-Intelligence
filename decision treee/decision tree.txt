@@ -1,0 +1,2 @@
+=> Decide root node: information gain - entropy 
+    P(yes)logP(yes) - P(no)logP(no)
