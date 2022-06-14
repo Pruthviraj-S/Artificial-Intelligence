@@ -14,3 +14,7 @@ for shopping
 p(H/E)=P(E/H)P(H)/P(E)   : bayes theorem, here H=hypothesis,E=evidence
 P(H/E) : posterior
 P(E/H) : likelyhood
+
+# Unsupervised algos
+
+## k-means
