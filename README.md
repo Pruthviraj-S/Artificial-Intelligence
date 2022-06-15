@@ -29,6 +29,9 @@
 ### Unsupervised Learning Algorithms
 
 - **K-Means**
+    - Clustering Methods:
+        - Elbow Method
+        - Purpose based
 
 ## Disclaimer
 Contents of this repository are only meant for learning the aspects of computer forensics. Only use for educational purposes
