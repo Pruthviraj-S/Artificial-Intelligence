@@ -51,8 +51,7 @@ kmeans = kmeans.fit(df[['Annual Income (k$)','Spending Score (1-100)']])
 
 df['Clusters'] = kmeans.labels_
 sns.scatterplot(x="Spending Score (1-100)", y="Annual Income (k$)",hue = 'Clusters',  data=df,palette='viridis')
-plt.show()
 
 # plot centroids
-plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s = 300, c = 'yellow', label = 'Centroid') 
+plt.scatter( kmeans.cluster_centers_[:, 1],kmeans.cluster_centers_[:, 0], s = 300, c = 'red', label = 'Centroid') 
 plt.show()
