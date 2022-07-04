@@ -48,3 +48,11 @@ model.add(keras.layers.Dense(10, activation="softmax")) # a dense softmax layer 
 # relu is used on hidden layers
 #sigmoid and softmax are used for output. 
 #Softmax is often used as the activation for the last layer of a classification network because the result could be interpreted as a probability distribution.
+
+model.summary() #function shows the number of parameters in each layer, how the output shape changes, and the total amount of parameters to be trained.
+
+# compile the model
+model.compile(loss="sparse_categorical_crossentropy",
+              optimizer="sgd",
+              metrics=["accuracy"])
+#sgd means stochastic gradient descent – a type of gradient descent that only uses a single training example per epoch.
