@@ -11,9 +11,8 @@ mnist = keras.datasets.mnist
 #The dataset is structured as a tuple of NumPy arrays: x training images, y training labels, and x test images, y test labels.
 # Downloads data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
 
-plt.imshow(x_train_full[2])
+plt.imshow(x_train_full[2]) #It will show the 3rd training image as python indexing starts with 0.
 plt.show()
-#It will show the 3rd training image as python indexing starts with 0.
 #perform data normalization so that all input values are between 0 and 1. 
 #Since a grayscale image has pixel values of 0 to 255, we divide each pixel by 255. 
 #Data normalization is necessary to reduce data redundancy and improve data integrity. 
@@ -56,3 +55,8 @@ model.compile(loss="sparse_categorical_crossentropy",
               optimizer="sgd",
               metrics=["accuracy"])
 #sgd means stochastic gradient descent – a type of gradient descent that only uses a single training example per epoch.
+
+# train the model with 30 epochs, epochs = 1 cycle of neural network
+model_history = model.fit(x_train,y_train,epochs=30,validation_data=(x_valid,y_valid))
+#accuracy = 99% using our test data
+# accuracy of 99.35% and validation accuracy of 98% in first run.
