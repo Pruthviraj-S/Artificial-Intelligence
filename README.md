@@ -13,7 +13,7 @@
 <a href="#"><img title="Language" src="https://img.shields.io/github/license/Pruthviraj-S/Computer-Forensics?style=for-the-badge"></a>
 </p>
 
-**Motto:** `(Always clean and pre process ).then(split into train/test)`
+**Motto:** `(Always clean and pre-process ).then(split into train/test)`
 ### Supervised Learning Algorithms
 
 - **Svm**
