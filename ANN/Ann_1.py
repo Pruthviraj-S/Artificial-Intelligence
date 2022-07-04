@@ -60,3 +60,10 @@ model.compile(loss="sparse_categorical_crossentropy",
 model_history = model.fit(x_train,y_train,epochs=30,validation_data=(x_valid,y_valid))
 #accuracy = 99% using our test data
 # accuracy of 99.35% and validation accuracy of 98% in first run.
+
+
+# now we will take 5 images from index 0-4 as input instead of 1
+x_sample = x_test[:5]
+#returns the probability of the image
+y_probability = model.predict(x_sample)
+y_probability.round() 
