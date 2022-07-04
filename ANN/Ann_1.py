@@ -65,5 +65,10 @@ model_history = model.fit(x_train,y_train,epochs=30,validation_data=(x_valid,y_v
 # now we will take 5 images from index 0-4 as input instead of 1
 x_sample = x_test[:5]
 #returns the probability of the image
+print('\nprobability:\n')
 y_probability = model.predict(x_sample)
-y_probability.round() 
+
+print(y_probability.round()) 
+
+print('\nProbability after rounding values:\n')
+y_predict = model.predict(x_sample)
