@@ -11,7 +11,7 @@ mnist = keras.datasets.mnist
 #The dataset is structured as a tuple of NumPy arrays: x training images, y training labels, and x test images, y test labels.
 # Downloads data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
 
-plt.imshow(x_train_full[3])
+plt.imshow(x_train_full[2])
 plt.show()
 #It will show the 3rd training image as python indexing starts with 0.
 #perform data normalization so that all input values are between 0 and 1. 
@@ -28,6 +28,23 @@ x_valid, x_train = x_train_norm[:5000], x_train_norm[5000:]
 y_valid, y_train = y_train_full[:5000], y_train_full[5000:]
 
 x_test = x_test_norm
-
 #Training data are fed after each training in an epoch. 
 #An epoch is when the entire training dataset passes through the neural network once. 
+
+np.random.seed(42)
+tf.random.set_seed(42)
+#42 is used as random seed in ML
+
+# Create keras model
+model = keras.models.Sequential()
+
+model.add(keras.layers.Flatten(input_shape=[28,28])) # 1 flatten layer as the input layer
+model.add(keras.layers.Dense(300, activation="relu")) # 2 dense relu layers as hidden layers 
+model.add(keras.layers.Dense(100, activation="relu"))
+model.add(keras.layers.Dense(10, activation="softmax")) # a dense softmax layer as the output layer
+#A flattening layer flattens the input to a single-column array. It prepares the input data for the next dense layers. 
+#a dense layer is a layer of parallel perceptrons.
+
+# relu is used on hidden layers
+#sigmoid and softmax are used for output. 
+#Softmax is often used as the activation for the last layer of a classification network because the result could be interpreted as a probability distribution.
