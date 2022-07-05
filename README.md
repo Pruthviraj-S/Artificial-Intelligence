@@ -2,8 +2,6 @@
 <a href="#"><img title="Made in INDIA" src="https://img.shields.io/badge/MADE%20IN-INDIA-green?colorA=%23ff9933&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 
-<p align="center">
-<!-- <a href="#"><img title="dfis" src="https://e-discovery.ng/wp-content/uploads/2021/07/Digital-Forensics-styled.png" width='256'></a>  -->
 <p align='center' style="font-size:48px; font-family: cursive; "> Artificial Intelligence </p>
 </p>
 
