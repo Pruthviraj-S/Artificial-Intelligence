@@ -7,9 +7,8 @@ images = ['../Assets/harry.jpg','../Assets/harry2.jpg','../Assets/harry3.jpg','.
 # loop for importing images from the list
 for i in images:
     image = cv2.imread(i)
-    # image = cv2.imread('../Assets/harry2.jpg')
-    # image = cv2.imread('../Assets/harry3.jpg')
 
+    # convert into grayscale
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # detect face
@@ -32,5 +31,7 @@ for i in images:
 
     # show img with detection
     cv2.imshow('image',image)
+
+    # wait for user to exit
     cv2.waitKey(0)
     cv2.destroyAllWindows()
