@@ -2,6 +2,10 @@
 <a href="#"><img title="Made in INDIA" src="https://img.shields.io/badge/MADE%20IN-INDIA-green?colorA=%23ff9933&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 
+<p align="center">
+<a href="#"><img title="logo" src="Assets/logo.png" width='128'></a>
+</p>
+
 <h1 align='center' style="font-size:48px; font-family: cursive; " > Artificial Intelligence </h1>
 
 <p align="center">
