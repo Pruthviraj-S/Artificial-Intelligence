@@ -2,9 +2,9 @@
 import cv2
 
 # read the image
-# image = cv2.imread('../Assets/harry.jpg')
+image = cv2.imread('../Assets/harry.jpg')
 # image = cv2.imread('../Assets/harry2.jpg')
-image = cv2.imread('../Assets/harry3.jpg')
+# image = cv2.imread('../Assets/harry3.jpg')
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
