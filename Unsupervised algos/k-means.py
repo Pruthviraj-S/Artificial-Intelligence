@@ -2,9 +2,7 @@
 import pandas as pd
 import seaborn as sns
 import sklearn.cluster as cluster
-import sklearn.metrics as metrics
 from sklearn.cluster import KMeans
-from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 from matplotlib import pyplot as plt
 
