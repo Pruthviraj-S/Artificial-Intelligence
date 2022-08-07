@@ -10,7 +10,7 @@ print(my_set_from_list)
 
 # create set
 my_set = set([2,4,6])
-print("My set is:", my_set)
+print("\nMy set is:", my_set)
 print("Is 3 in set:", 3 in my_set)
 print("Is 6 in set:", 6 in my_set)
 print("Is 4 NOT in set:", 4 not in my_set)
@@ -21,7 +21,7 @@ B= set([x for x in range(1,7)])
 P=list(prod(A,B))
 
 # outcomes
-print("Outcome of dice A:", A)
+print("\nOutcome of dice A:", A)
 print("Outcome of dice B:", B)
 print("Possible outcome of A and B together:\n", P)
 
@@ -49,4 +49,4 @@ print()
 print(len(favorable_outcome))
 
 prob = len(favorable_outcome)/len(event_space)
-print("The probability of getting a sum which is divisible by 3 is:", prob) 
+print("\nThe probability of getting a sum which is divisible by 3 is:", prob) 
