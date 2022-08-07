@@ -46,4 +46,26 @@ pred_y= b0 + (b1 * x)
 mt.plot(x,pred_y,color='yellow',label='Regression line')
 # plot scatterpoints
 mt.scatter(x,y,color='green',label='Scatter data')
+mt.xlabel('Head Size in cm3')
+mt.ylabel('Brain Weight in grams')
+mt.legend()
 mt.show()
+
+# Calculating Root Mean Squares Error
+rmse = 0
+for i in range(n):
+    y_pred = b0 + b1 * x[i]
+    rmse += (y[i] - y_pred) ** 2
+    
+rmse = np.sqrt(rmse/n)
+print("Root Mean Square Error is",rmse)
+
+# Calculating R2 Score
+ss_tot = 0
+ss_res = 0
+for i in range(n):
+    y_pred = b0 + b1 * x[i]
+    ss_tot += (y[i] - mean_y) ** 2
+    ss_res += (y[i] - y_pred) ** 2
+r2 = 1 - (ss_res/ss_tot)
+print("R2 Score",r2)
