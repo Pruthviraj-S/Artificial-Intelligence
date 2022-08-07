@@ -1,11 +1,9 @@
 # Import pre-reqs
-from turtle import color
 import pandas as pd
 import seaborn as sb
 from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt
 from sklearn import model_selection
-from sklearn.metrics import classification_report,confusion_matrix,accuracy_score # to do
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -50,6 +48,7 @@ X = array[:,0:4]
 Y = array[:,4]
 validation_size=0.20
 seed = 6
+scoring = 'accuracy'
 X_train, X_test, Y_train, Y_test = model_selection.train_test_split(X, Y, test_size=validation_size, random_state = seed)
 
 # models
